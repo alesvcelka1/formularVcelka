@@ -1,6 +1,9 @@
+
+<!-- macros.html -->
+
 {% macro render_errors(errors) %}
   {% if errors %}
-    <div class="alert alert-danger"></div>
+    <div class="alert alert-danger">
       {% for error in errors %}
         <p class="form-error">{{ error }}</p>
       {% endfor %}
