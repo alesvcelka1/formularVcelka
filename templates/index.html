@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +50,7 @@
 
         th {
             background-color: #007bff;
-            color: white;
+            color: rgb(17, 1, 1);
         }
 
         tr:nth-child(even) {
@@ -76,12 +75,11 @@
             <tbody>
                 {% for person in persons %}
                 <tr>
-                    <td>{{ person.id }}</td>
-                    <td>{{ person.first_name }}</td>
-                    <td>{{ person.last_name }}</td>
-                    <td>{{ person.age }}</td>
-                    <td>
-                        <a href="{{ url_for('detail', person_id=person.id) }}" class="btn btn-info">Detail</a>
+                    <td title="ID osoby">{{ person.id }}</td>
+                    <td title="Jméno osoby">{{ person.first_name }}</td>
+                    <td title="Příjmení osoby">{{ person.last_name }}</td>
+                    <td title="Věk osoby">{{ person.age }}</td>
+                    <td title="Akce">
                         <form action="{{ url_for('delete', token=serializer.dumps(person.id)) }}" method="post" style="display:inline;">
                             <button type="submit" class="btn btn-danger">Smazat</button>
                         </form>
